@@ -9,10 +9,9 @@ body{
     padding:0px 0 0px;
 }
 
-model-viewer{
-    background: #baf2f5;
+#reveal{
     width: 320px;
-    height: 240px;
+    height: 480px;
 }
 
 #top{

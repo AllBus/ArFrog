@@ -29,7 +29,9 @@
             <p>
                 <a href="intent://arvr.google.com/scene-viewer/1.0?file=https://allbus.github.io/ArFrog/models/frog.glb&title=Лягушка&mode=ar_preferred#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">Лягушка</a>;
             </p>
-            <model-viewer id="reveal" ar alt="3D модель лягушки." camera-controls auto-rotate src="./models/frog.glb"></model-viewer>
+            <model-viewer id="reveal" ar alt="3D модель лягушки."
+                          shadow-intensity="0.5" shadow-softness="0.2"
+                          autoplay camera-controls auto-rotate src="./models/frog.glb"></model-viewer>
 
         </article>
     </div>
