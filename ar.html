@@ -3,10 +3,18 @@
 <html>
 
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js">
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
 <body style='margin : 0px; overflow: scroll;'>
-<a-scene embedded arjs='patternRatio: 0.9'>
+<div class="arjs-loader">
+    <div>Loading, please wait...</div>
+</div>
+
+<a-scene embedded
+         vr-mode-ui="enabled: false;"
+         renderer="logarithmicDepthBuffer: true;"
+         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.9'>
 
 
     <!--      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>-->
@@ -16,10 +24,22 @@
     <!--      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>-->
 
     <!--      <a-marker-camera preset='hiro'></a-marker-camera>-->
-    <a-marker type = 'pattern' url = './pattern-000.patt'>
+    <a-nft
+            type="nft"
+            url="./pattern/earth"
+            smooth="true"
+            smoothCount="10"
+            smoothTolerance=".01"
+            smoothThreshold="5"
+    >
         <a-box position='0 0.5 0' material='opacity: 0.5;'> </a-box>
         <a-cylinder position="1 0.75 -3" radius="0.25" height="0.5" color="#FFC65D"></a-cylinder>
-    </a-marker>
+        <a-entity
+                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+                scale="0.5 0.5 0.5"
+                position="0 0 0"
+        ></a-entity>
+    </a-nft>
 
     <a-entity camera></a-entity>
 
